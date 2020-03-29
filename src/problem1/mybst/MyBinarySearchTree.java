@@ -33,17 +33,45 @@ public class MyBinarySearchTree {
 
     }
 
-    public void inorderRec(TreeNode root) {
+        void printPostorder(TreeNode node) {
 
-        if (root.getLeft() != null) {
+        if (node == null)
 
-            inorderRec(root.getLeft());
+            return;
 
-            System.out.println(root.getData());
+        printPostorder(node.getLeft());
 
-            inorderRec(root.getRight());
+        printPostorder(node.getRight());
 
-        }
+        System.out.print(node.getData() + " ");
+
+    }
+
+    void printInorder(TreeNode node) {
+
+        if (node == null)
+
+            return;
+
+        printInorder(node.getLeft());
+
+        System.out.print(node.getData() + " ");
+
+        printInorder(node.getRight());
+
+    }
+
+    void printPreorder(TreeNode node) {
+
+        if (node == null)
+
+            return;
+
+        System.out.print(node.getData() + " ");
+
+        printPreorder(node.getLeft());
+
+        printPreorder(node.getRight());
 
     }
 
